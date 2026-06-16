@@ -27,11 +27,7 @@
   a:hover{text-decoration:underline; color:var(--purple-lt)}
   .wrap{max-width:1280px; margin:0 auto; padding:0 24px 110px}
 
-  /* ---- powerline modeline header ---- */
-  .modeline{
-    display:flex; flex-wrap:wrap; align-items:stretch; font-size:18px;
-    margin:0 0 34px; box-shadow:0 2px 16px rgba(0,0,0,.5);
-  }
+  .modeline{display:flex; flex-wrap:wrap; align-items:stretch; font-size:18px; margin:0 0 34px; box-shadow:0 2px 16px rgba(0,0,0,.5)}
   .seg{padding:11px 22px 11px 26px; display:flex; align-items:center; gap:10px; white-space:nowrap}
   .seg.p{background:var(--purple); color:#fff; font-weight:700; clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 100%); padding-right:34px}
   .seg.a{background:#3c3a47; color:var(--purple-lt); clip-path:polygon(0 0,calc(100% - 15px) 0,100% 50%,calc(100% - 15px) 100%,0 50%,15px 50%); margin-left:-15px; padding-left:34px}
@@ -44,28 +40,20 @@
   h1 .accent{color:var(--purple-lt)}
   .subtitle{color:var(--dim); font-size:19px; margin:0 0 4px}
 
-  /* ---- short summary ---- */
   .lead{border-left:5px solid var(--green); background:rgba(45,149,116,.08); border-radius:7px; padding:18px 22px; margin:26px 0}
   .lead .t{color:var(--green-lt); font-size:16px; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:8px; font-weight:700}
   .lead ul{margin:0; padding-left:24px}
   .lead li{margin:6px 0}
   .lead li::marker{color:var(--green-lt)}
 
-  /* ---- TOC ---- */
-  nav.toc{
-    background:var(--bg2); border:1px solid var(--border); border-left:5px solid var(--purple);
-    border-radius:7px; padding:18px 24px; margin:26px 0 40px;
-  }
+  nav.toc{background:var(--bg2); border:1px solid var(--border); border-left:5px solid var(--purple); border-radius:7px; padding:18px 24px; margin:26px 0 40px}
   nav.toc .t{color:var(--func); font-size:16px; text-transform:uppercase; letter-spacing:1.2px; margin-bottom:10px}
   nav.toc ol{margin:0; padding:0; list-style:none; columns:2; column-gap:40px}
   nav.toc li{padding:5px 0; break-inside:avoid}
   nav.toc li::before{content:"▸ "; color:var(--purple-lt)}
 
   section{margin:0 0 46px}
-  h2{
-    font-size:27px; color:#fff; margin:46px 0 18px; padding:11px 0 11px 18px;
-    border-left:5px solid var(--blue); background:linear-gradient(90deg,rgba(79,151,215,.10),transparent);
-  }
+  h2{font-size:27px; color:#fff; margin:46px 0 18px; padding:11px 0 11px 18px; border-left:5px solid var(--blue); background:linear-gradient(90deg,rgba(79,151,215,.10),transparent)}
   h2 .num{color:var(--blue); margin-right:12px}
   h3{font-size:21px; color:var(--func); margin:22px 0 10px}
   p{margin:10px 0}
@@ -73,7 +61,24 @@
   .muted{color:var(--dim)}
   strong{color:#e8e8e8}
 
-  /* ---- panels / cards ---- */
+  .gallery{display:grid; grid-template-columns:repeat(auto-fill,minmax(250px,1fr)); gap:18px; margin:20px 0 8px}
+  .pcard{background:var(--bg2); border:1px solid var(--border); border-radius:9px; overflow:hidden; display:flex; flex-direction:column; transition:border-color .15s, transform .15s}
+  .pcard:hover{border-color:var(--purple); transform:translateY(-2px)}
+  .pcard.rec{border-color:var(--green); box-shadow:0 0 0 1px rgba(45,149,116,.45)}
+  .pimg{height:190px; background:#fff; display:flex; align-items:center; justify-content:center; position:relative; border-bottom:1px solid var(--border)}
+  .pimg img{max-width:100%; max-height:100%; object-fit:contain; display:block}
+  .pimg.noimg{background:var(--bg4)}
+  .pimg.noimg img{display:none}
+  .pimg.noimg::after{content:"⛢ снимка недостъпна"; color:var(--faint); font-size:15px}
+  .pcard figcaption{padding:13px 15px}
+  .pcard figcaption a{font-weight:700; font-size:18.5px}
+  .pcard .spec{display:block; color:var(--dim); font-size:15.5px; margin-top:5px; line-height:1.45}
+  .pcard .pr{color:var(--green-lt); font-weight:700}
+  .pbadge{display:inline-block; font-size:13px; font-weight:700; padding:2px 9px; border-radius:11px; border:1px solid; margin-top:9px; margin-right:6px}
+  .pbadge.ok{color:var(--green-lt); border-color:var(--green); background:rgba(134,220,47,.08)}
+  .pbadge.bad{color:#ff8079; border-color:var(--red); background:rgba(242,36,31,.10)}
+  .pbadge.rec{color:var(--purple-lt); border-color:var(--purple); background:rgba(93,77,122,.22)}
+
   .panel{background:var(--bg2); border:1px solid var(--border); border-radius:7px; padding:20px 22px; margin:18px 0}
   .grid{display:grid; gap:18px}
   .g2{grid-template-columns:repeat(2,1fr)}
@@ -83,47 +88,40 @@
   .kv dt{color:var(--var)}
   .kv dd{margin:0; color:var(--base)}
 
-  /* ---- callouts ---- */
   .callout{border-radius:7px; padding:18px 20px 18px 22px; margin:18px 0; border-left:5px solid; background:var(--bg2)}
   .callout .h{font-weight:700; margin-bottom:6px; font-size:21px}
-  .callout.ok{border-color:var(--green-lt); background:rgba(134,220,47,.06)}
-  .callout.ok .h{color:var(--green-lt)}
-  .callout.info{border-color:var(--blue); background:rgba(79,151,215,.07)}
-  .callout.info .h{color:var(--blue)}
+  .callout.ok{border-color:var(--green-lt); background:rgba(134,220,47,.06)} .callout.ok .h{color:var(--green-lt)}
+  .callout.info{border-color:var(--blue); background:rgba(79,151,215,.07)} .callout.info .h{color:var(--blue)}
+  .callout.warn{border-color:var(--orange); background:rgba(220,117,47,.08)} .callout.warn .h{color:var(--orange)}
 
-  /* ---- tables ---- */
   .tbl-scroll{overflow-x:auto; border:1px solid var(--border); border-radius:7px; margin:18px 0}
-  table{border-collapse:collapse; width:100%; font-size:18.5px; min-width:720px}
-  thead th{background:var(--purple); color:#fff; text-align:left; padding:12px 16px; font-weight:700}
-  tbody td{padding:11px 16px; border-top:1px solid var(--border); vertical-align:top}
+  table{border-collapse:collapse; width:100%; font-size:18px; min-width:760px}
+  thead th{background:var(--purple); color:#fff; text-align:left; padding:12px 14px; font-weight:700}
+  tbody td{padding:11px 14px; border-top:1px solid var(--border); vertical-align:top}
   tbody tr:nth-child(odd){background:rgba(255,255,255,.012)}
   tbody tr:hover{background:rgba(93,77,122,.16)}
-  td.first{white-space:nowrap}
-  td.first a{font-weight:600}
+  tbody tr.offer{background:rgba(45,149,116,.06)}
+  tbody tr.offer:hover{background:rgba(45,149,116,.13)}
+  td.first{white-space:nowrap} td.first a{font-weight:600}
   td.num{color:var(--const); text-align:right; white-space:nowrap}
   .price{color:var(--green-lt); white-space:nowrap}
+  .vat{color:var(--dim); font-size:.82em}
 
-  /* ---- status badges ---- */
-  .badge{display:inline-block; font-size:15px; font-weight:700; padding:3px 12px; border-radius:13px; border:1px solid; white-space:nowrap}
+  .badge{display:inline-block; font-size:14px; font-weight:700; padding:3px 11px; border-radius:13px; border:1px solid; white-space:nowrap}
   .badge.ok{color:var(--green-lt); border-color:var(--green); background:rgba(134,220,47,.08)}
   .badge.warn{color:var(--orange); border-color:var(--orange); background:rgba(220,117,47,.10)}
   .badge.bad{color:#ff8079; border-color:var(--red); background:rgba(242,36,31,.10)}
+  .badge.none{color:var(--faint); border-color:var(--border); background:transparent}
   .legend{display:flex; gap:22px; flex-wrap:wrap; font-size:17px; margin:8px 0 0; color:var(--dim)}
 
-  /* ---- recommendation steps ---- */
   .steps{counter-reset:s; display:grid; gap:16px}
   .step{position:relative; background:var(--bg2); border:1px solid var(--border); border-radius:7px; padding:18px 20px 18px 72px}
   .step::before{counter-increment:s; content:counter(s); position:absolute; left:18px; top:18px; width:38px; height:38px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px}
-  .step.key{border-color:var(--green); box-shadow:0 0 0 1px rgba(45,149,116,.4)}
-  .step.key::before{background:var(--green)}
+  .step.key{border-color:var(--green); box-shadow:0 0 0 1px rgba(45,149,116,.4)} .step.key::before{background:var(--green)}
   .step b{color:#fff}
 
-  ul.clean{margin:10px 0; padding-left:24px}
-  ul.clean li{margin:6px 0}
-  ul.clean li::marker{color:var(--purple-lt)}
-
-  .src-list{font-size:17px; columns:2; column-gap:40px}
-  .src-list div{padding:5px 0; break-inside:avoid}
+  ul.clean{margin:10px 0; padding-left:24px} ul.clean li{margin:6px 0} ul.clean li::marker{color:var(--purple-lt)}
+  .src-list{font-size:17px; columns:2; column-gap:40px} .src-list div{padding:5px 0; break-inside:avoid}
   @media(max-width:820px){.src-list{columns:1}}
 
   footer{margin-top:54px; border-top:1px solid var(--border); padding-top:20px; color:var(--faint); font-size:16px}
@@ -135,15 +133,14 @@
 <body>
 <div class="wrap">
 
-  <!-- ============ modeline ============ -->
   <div class="modeline">
     <div class="seg p">◉ ПСОВ</div>
     <div class="seg a">с. Осоица · общ. Горна Малина</div>
-    <div class="seg b"><span class="dot">●</span> bg · 1–4 ЕЖ · постоянно жилище &nbsp;|&nbsp; UTF-8 &nbsp;|&nbsp; org-mode</div>
+    <div class="seg b"><span class="dot">●</span> bg · 1–4 ЕЖ · постоянно жилище &nbsp;|&nbsp; EUR &nbsp;|&nbsp; оферта: Pi Trade</div>
   </div>
 
   <header class="hero">
-    <div class="buf">;; *пречиствателни станции за отпадни води — опции, доставчици, цени*</div>
+    <div class="buf">;; *пречиствателни станции за отпадни води — оферта, опции, цени*</div>
     <h1>Пречиствателна станция <span class="accent">за имот в с. Осоица</span></h1>
     <p class="subtitle">Тухлена къща (нач. на 80-те, пълно обновяване) · постоянно жилище · община Горна Малина, обл. София · ЕКАТТЕ 54287</p>
   </header>
@@ -151,10 +148,11 @@
   <div class="lead">
     <div class="t">Накратко</div>
     <ul>
-      <li><strong>Подпочвено заустване (дренаж) + поливане</strong> и теренът поема водата → <a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> — без ток, най-евтино (<span class="price">~1 620 €</span>).</li>
-      <li><strong>Заустване в дере + високо качество без ток</strong> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">Graf EasyCompact</a> или <a href="https://biorock.bg/">BIOROCK / ECOROCK</a> (EN 12566-3). Най-доброто съвпадение с приоритетите Ви.</li>
-      <li><strong>Високо качество с ток</strong> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a> / <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-klaro-easy">Klaro Easy</a> (SBR) — при постоянно ползване работят отлично, но искат ток и повече поддръжка.</li>
-      <li><strong>Правно:</strong> за обект извън населено място до <code>10 м³/ден</code> и <code>50 ЕЖ</code> с поне първично пречистване обикновено <strong>не е нужно разрешително</strong> за заустване.</li>
+      <li>Получена е конкретна оферта от <strong><a href="https://pi-trade.com/bg/">ПИ Трейд (Pi Trade)</a></strong> за 4 ПСОВ + септичен резервоар + дренажен тунел (всички GRAF, склад София). Препоръка на доставчика: <strong>One2Clean</strong>.</li>
+      <li><strong>При постоянно жилище (има ток):</strong> <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">One2Clean</a> е едновременно най-евтината пълна ПСОВ и с най-високо качество (EN 12566-3, заустване в дере) — от <span class="price">€2 860</span> без ДДС.</li>
+      <li><strong>Ако „без ток" е водещо:</strong> <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">EasyCompact</a> (EN 12566-3, без ток) — от <span class="price">€4 420</span>, но ~€1 500–1 900 по-скъпо.</li>
+      <li><strong>Бюджетно, само за дренаж в почва:</strong> <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Anaerobix</a> — от <span class="price">€1 600</span> (но ~85%, без азот, не за дере).</li>
+      <li class="disc">⚠ Цените са <strong>без ДДС</strong> и <strong>без изкоп / доставка извън София</strong>; офертата <strong>изтече на 05.06.2026</strong> — поискай актуализация.</li>
     </ul>
   </div>
 
@@ -162,16 +160,15 @@
     <div class="t">Съдържание</div>
     <ol>
       <li><a href="#context">Контекст и изисквания</a></li>
-      <li><a href="#tech">Технологии — сравнение</a></li>
-      <li><a href="#suppliers">Доставчици и модели</a></li>
-      <li><a href="#prices">Цени</a></li>
+      <li><a href="#tech">Технологии — опции и сравнение</a></li>
+      <li><a href="#offer">Получената оферта — цени (Pi Trade)</a></li>
+      <li><a href="#suppliers">Други доставчици (за сравнение)</a></li>
       <li><a href="#legal">Нормативна рамка и юрисдикция</a></li>
       <li><a href="#reco">Препоръка</a></li>
       <li><a href="#sources">Източници</a></li>
     </ol>
   </nav>
 
-  <!-- ============ context ============ -->
   <section id="context">
     <h2><span class="num">01</span>Контекст и изисквания</h2>
     <div class="grid g2">
@@ -198,69 +195,110 @@
     </div>
   </section>
 
-  <!-- ============ tech ============ -->
   <section id="tech">
-    <h2><span class="num">02</span>Технологии — сравнение</h2>
+    <h2><span class="num">02</span>Технологии — опции и сравнение</h2>
+
+
+    <h3>Сравнителна таблица</h3>
     <div class="tbl-scroll">
     <table>
-      <thead><tr><th>Технология</th><th>Ток</th><th>Поддръжка</th><th>Качество / стандарт</th><th>Заустване</th><th>Бележка</th></tr></thead>
+      <thead><tr><th>Технология</th><th>Ток</th><th>Поддръжка</th><th>Качество / стандарт</th><th>Заустване</th><th>В офертата (Pi Trade)</th><th>Бележка</th></tr></thead>
       <tbody>
-        <tr><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a> / <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-klaro-easy">Klaro Easy</a> (SBR)</td><td><span class="badge bad">с ток</span> 0,25–0,72 kWh/ден</td><td>средна–висока</td><td>високо</td><td>повърхностно</td><td>компресор + автоматика + еърлифт</td></tr>
-        <tr><td class="first"><a href="https://prestan.bg/пречиствателни-станции/">Pure Sys</a> — активна утайка</td><td><span class="badge bad">с ток</span></td><td>средна–висока</td><td>високо (C, N, P)</td><td>повърхностно</td><td>мин. модел 3–6 ЕЖ</td></tr>
-        <tr><td class="first"><a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a></td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>EN 12566-1</td><td>само подпочвено</td><td>гравитачно, най-евтино</td></tr>
-        <tr><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Graf Anaerobix</a></td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>~51% БПК₅ (анаеробна)</td><td>само подпочвено</td><td>биофилтър + гравитация</td></tr>
-        <tr><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">Graf EasyCompact</a></td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>EN 12566-3+A2 · ~92% БПК₅</td><td>повърхностно ✔</td><td>аеробен GRAF биофилтър</td></tr>
-        <tr><td class="first"><a href="https://biorock.bg/">BIOROCK / ECOROCK</a></td><td><span class="badge ok">без ток</span></td><td>много ниска</td><td>EN 12566-3</td><td>повърхностно ✔</td><td>15 г. гаранция; изпомпване 3–4 г.</td></tr>
-        <tr><td class="first">Коренова / растителна (wetland)</td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>високо</td><td>повърхностно / поливане</td><td>иска площ 3–20 м²/ЕЖ; по индивидуален проект</td></tr>
+        <tr class="offer"><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a> (SBR)</td><td><span class="badge bad">с ток</span> 0,25–0,72 kWh/ден</td><td>средна–висока</td><td>EN 12566-3 · ~99%*</td><td>повърхностно ✔</td><td><span class="badge ok">✔ €2 860–4 320</span></td><td>препоръката на доставчика; 2 г. гар. на ел. части</td></tr>
+        <tr class="offer"><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">Graf EasyCompact</a></td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>EN 12566-3+A2 · ~92%</td><td>повърхностно ✔</td><td><span class="badge ok">✔ €4 420–4 950</span></td><td>без компресор; 5 г. гаранция</td></tr>
+        <tr class="offer"><td class="first">Graf EcoRock</td><td><span class="badge ok">без ток</span></td><td>много ниска</td><td>EN 12566-3+A2</td><td>повърхностно ✔</td><td><span class="badge ok">✔ €4 150–5 680</span></td><td>от 6 ЕЖ — презразмерен за 1–4 души</td></tr>
+        <tr class="offer"><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Graf Anaerobix</a></td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>~85% (PIA) · анаеробна</td><td>само подпочвено</td><td><span class="badge ok">✔ €1 600–3 580</span></td><td>най-евтино; без отстраняване на азот</td></tr>
+        <tr class="offer"><td class="first">Септичен резервоар</td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>само първично (EN 12566-3 A.3 — здравина)</td><td>задължит. дренаж</td><td><span class="badge ok">✔ €1 560–2 890</span></td><td>не е ПСОВ — нужно дренажно поле след него</td></tr>
+        <tr><td class="first"><a href="https://prestan.bg/пречиствателни-станции/">Pure Sys</a> (Престан)</td><td><span class="badge bad">с ток</span></td><td>средна–висока</td><td>високо (C, N, P)</td><td>повърхностно</td><td><span class="badge none">— друг доставчик</span></td><td>за сравнителна оферта</td></tr>
+        <tr><td class="first">Коренова / растителна (wetland)</td><td><span class="badge ok">без ток</span></td><td>ниска</td><td>високо</td><td>повърхностно / поливане</td><td><span class="badge none">—</span></td><td>иска площ 3–20 м²/ЕЖ; по индивидуален проект</td></tr>
       </tbody>
     </table>
     </div>
     <div class="legend">
-      <span><span class="badge ok">без ток</span> работи гравитачно</span>
-      <span><span class="badge bad">с ток</span> изисква постоянно ел. захранване</span>
+      <span><span class="badge ok">✔</span> включено в получената оферта (Pi Trade)</span>
+      <span><span class="badge ok">без ток</span> гравитачно</span>
+      <span><span class="badge bad">с ток</span> постоянно ел. захранване</span>
     </div>
-    <p class="muted">Трите безтокови станции <strong>не са равни по качество</strong>: <a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> (EN 12566-1) и <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Anaerobix</a> (анаеробна) са само за подпочвено заустване, докато <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">EasyCompact</a> и <a href="https://biorock.bg/">BIOROCK/ECOROCK</a> (EN 12566-3) са годни и за заустване в дере/река.</p>
+    <p class="muted">Подредени са първо съоръженията от <strong>получената оферта</strong>. Трите безтокови опции <strong>не са равни по качество</strong>: <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">EasyCompact</a> и EcoRock (EN 12566-3) могат да заустват в дере, докато <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Anaerobix</a> (~85%) и септичният резервоар са само за подпочвено заустване. <span class="muted">* „99%" за One2Clean е заявена от производителя стойност (сертификат PIA 2013-181B14) — поискай протокол от изпитване.</span></p>
   </section>
 
-  <!-- ============ suppliers ============ -->
+  <section id="offer">
+    <h2><span class="num">03</span>Получената оферта — цени (Pi Trade)</h2>
+
+    <div class="callout warn">
+      <div class="h">⚠ Важно за цените</div>
+      <ul class="clean" style="margin-top:4px">
+        <li>Всички цени са <strong>без ДДС</strong> (добави 20%) и <strong>само за оборудване</strong>.</li>
+        <li>Офертата е <strong>валидна до 05.06.2026</strong> — вече изтекла; доставчикът предупреди за актуализация на цените след тази дата.</li>
+        <li>Монтажната цена включва доставка <strong>само в рамките на гр. София</strong> — Осоица е извън града (~40 км), очаквай доплащане за доставка.</li>
+        <li>Офертата <strong>не включва</strong>: изкоп (багер), вода за напълване, инертен материал за обратен насип (кръгъл филц 4–16 мм). Поискай цена за <strong>комплексно изпълнение</strong>.</li>
+        <li>Плащане: <strong>50% при подписване, 50% при доставка</strong>.</li>
+      </ul>
+    </div>
+
+    <h3>Пречиствателни станции (ПСОВ)</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Продукт / ЕЖ</th><th>Обем</th><th>Ток</th><th>Цена без ДДС</th><th>Цена с ДДС</th><th>Заустване</th></tr></thead>
+      <tbody>
+        <tr class="offer"><td class="first">One2Clean · 3 ЕЖ</td><td>2 700 л</td><td><span class="badge bad">с ток</span></td><td class="price">€2 860</td><td class="price">€3 432</td><td>дере ✔ / поливане</td></tr>
+        <tr class="offer"><td class="first">One2Clean · 5 ЕЖ</td><td>3 750 л</td><td><span class="badge bad">с ток</span></td><td class="price">€3 200</td><td class="price">€3 840</td><td>дере ✔</td></tr>
+        <tr class="offer"><td class="first">One2Clean · 7 ЕЖ</td><td>4 800 л</td><td><span class="badge bad">с ток</span></td><td class="price">€3 640</td><td class="price">€4 368</td><td>дере ✔</td></tr>
+        <tr class="offer"><td class="first">One2Clean · 9 ЕЖ</td><td>6 500 л</td><td><span class="badge bad">с ток</span></td><td class="price">€4 320</td><td class="price">€5 184</td><td>дере ✔</td></tr>
+        <tr><td class="first">EasyCompact · 4 ЕЖ</td><td>3 350 л</td><td><span class="badge ok">без ток</span></td><td class="price">€4 420</td><td class="price">€5 304</td><td>дере ✔</td></tr>
+        <tr><td class="first">EasyCompact · 5 ЕЖ</td><td>4 350 л</td><td><span class="badge ok">без ток</span></td><td class="price">€4 760</td><td class="price">€5 712</td><td>дере ✔</td></tr>
+        <tr><td class="first">EasyCompact · 6 ЕЖ</td><td>4 350 л</td><td><span class="badge ok">без ток</span></td><td class="price">€4 950</td><td class="price">€5 940</td><td>дере ✔</td></tr>
+        <tr><td class="first">EcoRock · 6 ЕЖ</td><td>3 700 л</td><td><span class="badge ok">без ток</span></td><td class="price">€4 150</td><td class="price">€4 980</td><td>дере ✔</td></tr>
+        <tr><td class="first">EcoRock · 8 ЕЖ</td><td>5 250 л</td><td><span class="badge ok">без ток</span></td><td class="price">€4 890</td><td class="price">€5 868</td><td>дере ✔</td></tr>
+        <tr><td class="first">EcoRock · 10 ЕЖ</td><td>6 800 л</td><td><span class="badge ok">без ток</span></td><td class="price">€5 680</td><td class="price">€6 816</td><td>дере ✔</td></tr>
+        <tr><td class="first">Anaerobix · 3 ЕЖ</td><td>1 200 л</td><td><span class="badge ok">без ток</span></td><td class="price">€1 600</td><td class="price">€1 920</td><td>само дренаж</td></tr>
+        <tr><td class="first">Anaerobix · 6 ЕЖ</td><td>2 700 л</td><td><span class="badge ok">без ток</span></td><td class="price">€2 050</td><td class="price">€2 460</td><td>само дренаж</td></tr>
+        <tr><td class="first">Anaerobix · 10 ЕЖ</td><td>3 750 л</td><td><span class="badge ok">без ток</span></td><td class="price">€2 420</td><td class="price">€2 904</td><td>само дренаж</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <p class="muted" style="font-size:16px">Монтаж и пускане в експлоатация: One2Clean &amp; EasyCompact <strong>€280</strong>, EcoRock <strong>€520</strong>, Anaerobix <strong>€260</strong> (без ДДС, с доставка само в София). Гаранция: One2Clean — 15 г. резервоар / <strong>2 г. ел. оборудване</strong>; EasyCompact &amp; EcoRock — 5 г.; Anaerobix — 15 г.</p>
+
+    <h3>Допълнителни елементи (за пътя на заустване)</h3>
+    <div class="tbl-scroll">
+    <table>
+      <thead><tr><th>Елемент</th><th>Детайл</th><th>Цена без ДДС</th><th>Бележка</th></tr></thead>
+      <tbody>
+        <tr><td class="first">Септичен резервоар · 5 ЕЖ</td><td>2 700 л, двукамерен</td><td class="price">€1 560</td><td rowspan="2">Само първично пречистване — <strong>не е ПСОВ</strong>; задължително дренажно поле след него. Сертификат EN 12566-3 <strong>A.3 (само здравина/водоплътност)</strong>. Гаранция 15 г.</td></tr>
+        <tr><td class="first">Септичен резервоар · 7 ЕЖ</td><td>3 750 л</td><td class="price">€1 920</td></tr>
+        <tr><td class="first">Дренажен тунел GRAF</td><td>модул 300 л (11 кг)</td><td class="price">€75 / бр</td><td>За заустване в почва, когато няма дере. 1 модул ≈ 800 кг чакъл / 36 м дренажни тръби. Изисква попивна почва и ≥80 см над подпочвените води.</td></tr>
+        <tr><td class="first">↳ аксесоари</td><td>капак / ревизия / вентил. / геотекстил</td><td class="price">€25 / €70 / €30 / €2·м²</td><td>страничен капак · телескопичен Ф200 · вентилационен накрайник · геотекстил</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <div class="callout info">
+      <div class="h">Друга важна информация от офертите</div>
+      <ul class="clean" style="margin-top:4px">
+        <li><strong>One2Clean (техника):</strong> компресор XP-60…XP-100 (40–95 W), работи 5,9–7,5 ч/ден; табло с дисплей, монтира се на сухо проветриво място с ток (външно табло при разстояние >10 м от сградата). Изкоп: от ~2,50×2,50 м, дълб. 1,30 м (3 ЕЖ) до 3,00×3,00 м, дълб. 2,00 м (9 ЕЖ).</li>
+        <li><strong>EasyCompact / EcoRock:</strong> биофилтър GRAF Rock — понасят дълъг период без приток на вода; доставка 20 дни след договор.</li>
+        <li><strong>Anaerobix:</strong> гравитачна, „подходяща за всякакви условия", налична на склад; степен на пречистване до 85% (без азот).</li>
+        <li><strong>Всички GRAF, налични в склад София.</strong> Контакт: Петър Цинцов · <a href="mailto:office@pi-trade.com">office@pi-trade.com</a> · +359 888 80 70 17.</li>
+      </ul>
+    </div>
+  </section>
+
   <section id="suppliers">
-    <h2><span class="num">03</span>Доставчици и модели в България</h2>
+    <h2><span class="num">04</span>Други доставчици (за сравнителни оферти)</h2>
+    <p class="muted">Получената оферта е от Pi Trade (GRAF). За сравнение на цени си струва да вземеш оферта и от:</p>
     <div class="tbl-scroll">
     <table>
-      <thead><tr><th>Фирма</th><th>Уебсайт</th><th>Марки / модели</th><th>Профил</th></tr></thead>
+      <thead><tr><th>Фирма</th><th>Уебсайт</th><th>Продукти</th><th>Бележка</th></tr></thead>
       <tbody>
-        <tr><td class="first"><a href="https://pi-trade.com/bg/">Pi Trade (ПИ Трейд ЕООД)</a></td><td><a href="https://pi-trade.com/bg/">pi-trade.com</a></td><td>представител на <strong>Graf (DE)</strong> + <strong>BMS (IE)</strong>: <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">One2Clean</a>, <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-klaro-easy">Klaro Easy</a>, Picobell, <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Anaerobix</a>, <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">EasyCompact</a>, BMS Blivet</td><td>най-широк избор; токови и безтокови</td></tr>
-        <tr><td class="first"><a href="https://4tanks.bg/">4tanks.bg</a></td><td><a href="https://4tanks.bg/">4tanks.bg</a></td><td><a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> / <a href="https://4tanks.bg/bg-catalog-details-16.html">6 / 8</a>, <a href="https://4tanks.bg/bg-catalog-details-16.html">Biorock BEASY</a></td><td>точно вашият размер, безтокови</td></tr>
-        <tr><td class="first"><a href="https://prestan.bg/">Престан Комерс ООД</a> (Бургас)</td><td><a href="https://prestan.bg/">prestan.bg</a></td><td><a href="https://prestan.bg/пречиствателни-станции/">Pure Sys · ПСОВ5…ПСОВ500</a> (с ток)</td><td>бг производител; min. 3–6 ЕЖ</td></tr>
-        <tr><td class="first"><a href="https://biorock.bg/">BIOROCK</a> (представители)</td><td><a href="https://biorock.bg/">biorock.bg</a> · <a href="https://cubicm3.bg/">cubicm3.bg</a> · <a href="https://ecobox.bg/">ecobox.bg</a></td><td><a href="https://biorock.bg/">BIOROCK / ECOROCK</a> (безтокови, EN 12566-3)</td><td>„качество без ток"</td></tr>
-        <tr><td class="first"><a href="https://www.premiertechaqua.com/en-gb/wastewater-treatment/ecoflo">Premier Tech</a></td><td><a href="https://www.premiertechaqua.com/en-gb/wastewater-treatment/ecoflo">premiertechaqua.com</a></td><td><a href="https://www.premiertechaqua.com/en-gb/wastewater-treatment/ecoflo">Ecoflo</a> (безтокова, EN 12566-3)</td><td>алтернатива „качество без ток"</td></tr>
+        <tr><td class="first"><a href="https://pi-trade.com/bg/">Pi Trade (ПИ Трейд ЕООД)</a></td><td><a href="https://pi-trade.com/bg/">pi-trade.com</a></td><td>GRAF: One2Clean, EasyCompact, EcoRock, Anaerobix + BMS</td><td><span class="badge ok">✔ нашата оферта</span></td></tr>
+        <tr><td class="first"><a href="https://4tanks.bg/bg-product-details-838.html">4tanks.bg</a></td><td><a href="https://4tanks.bg/">4tanks.bg</a></td><td>COMPACT BIO 4 (без ток, EN 12566-1) — ~€1 620</td><td>сравним бюджетен безтоков вариант (само подпочвено)</td></tr>
+        <tr><td class="first"><a href="https://biorock.bg/">BIOROCK</a></td><td><a href="https://biorock.bg/">biorock.bg</a> · <a href="https://cubicm3.bg/">cubicm3.bg</a></td><td>BIOROCK / ECOROCK (без ток, EN 12566-3)</td><td>друга марка безтокова с дере-заустване</td></tr>
+        <tr><td class="first"><a href="https://prestan.bg/">Престан Комерс ООД</a></td><td><a href="https://prestan.bg/">prestan.bg</a></td><td>Pure Sys (активна утайка, с ток)</td><td>бг производител; алтернатива с ток</td></tr>
       </tbody>
     </table>
     </div>
   </section>
 
-  <!-- ============ prices ============ -->
-  <section id="prices">
-    <h2><span class="num">04</span>Цени <span class="muted" style="font-size:18px">(в евро — само оборудване, без доставка/изкоп/монтаж)</span></h2>
-    <div class="tbl-scroll">
-    <table>
-      <thead><tr><th>Продукт</th><th>Клас</th><th>Цена (EUR)</th><th>Статус</th></tr></thead>
-      <tbody>
-        <tr><td class="first"><a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> (до 4 ЕЖ)</td><td>EN 12566-1, без ток</td><td class="price">1 620 €</td><td><span class="badge ok">потвърдена</span></td></tr>
-        <tr><td class="first"><a href="https://4tanks.bg/bg-catalog-details-16.html">COMPACT BIO 6</a></td><td>без ток</td><td class="price">1 800 €</td><td><span class="badge ok">потвърдена</span></td></tr>
-        <tr><td class="first"><a href="https://4tanks.bg/bg-catalog-details-16.html">COMPACT BIO 8</a></td><td>без ток</td><td class="price">2 280 €</td><td><span class="badge ok">потвърдена</span></td></tr>
-        <tr><td class="first"><a href="https://4tanks.bg/bg-catalog-details-16.html">Biorock BEASY 2</a></td><td>без ток</td><td class="price">2 820 €</td><td><span class="badge ok">потвърдена</span></td></tr>
-        <tr><td class="first"><a href="https://biorock.bg/">BIOROCK / ECOROCK</a> — цяла станция</td><td>EN 12566-3, без ток</td><td class="price">~4 400–5 800 €</td><td><span class="badge warn">дилърски диапазон</span></td></tr>
-        <tr><td class="first"><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a></td><td>SBR, с ток</td><td class="price">~3 610 €</td><td><span class="badge warn">ориентировъчна</span></td></tr>
-      </tbody>
-    </table>
-    </div>
-    <p class="disc">⚠ Ниските EUR-цени за <a href="https://biorock.bg/">BIOROCK</a> (ST1-2000 ≈ 2 154 €, ECOROCK-1500 ≈ 3 594 €) са на <strong>отделни компоненти</strong>, не на цяла станция.</p>
-    <p class="disc">⚠ Обобщените диапазони от <a href="https://www.daibau.bg/ceni/prechistvane_na_otpadnite_vodi">daibau.bg</a> (биологични 1 989–3 162 €; растителни 1 275–1 408 €) са <strong>ориентировъчни</strong>.</p>
-    <p class="muted" style="font-size:16px">Цените са в евро (официална валута от 01.2026 г.). Фиксиран курс за справка: 1 € = 1,95583 лв.</p>
-  </section>
-
-  <!-- ============ legal ============ -->
   <section id="legal">
     <h2><span class="num">05</span>Нормативна рамка и юрисдикция</h2>
 
@@ -295,44 +333,43 @@
     </div>
   </section>
 
-  <!-- ============ recommendation ============ -->
   <section id="reco">
     <h2><span class="num">06</span>Препоръка — постоянно жилище, 1–4 души</h2>
     <div class="steps">
-      <div class="step key"><b>Първо: проверете правния статус.</b> Попада ли имотът в чл. 46, ал. 4, т. 1 ЗВ (извън населено място · ≤10 м³/ден · ≤50 ЕЖ · поне първично пречистване)? Ако да — разрешително вероятно <strong>не Ви трябва</strong>, само уведомяване. Питайте <a href="https://www.bd-dunav.bg/contact/">БДДР</a> (Плевен / изнесеното м-то в София).</div>
-      <div class="step"><b>Подпочвено / дренаж + поливане</b> и теренът поема водата → <a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> (EN 12566-1) е достатъчно и най-евтино (<span class="price">~1 620 €</span> оборудване).</div>
-      <div class="step"><b>Повърхностно заустване в дере + високо качество + без ток</b> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">Graf EasyCompact</a> или <a href="https://biorock.bg/">BIOROCK / ECOROCK</a> (и двете EN 12566-3). Съчетава всичките Ви приоритети — качество, без ток, ниска поддръжка.</div>
-      <div class="step"><b>Ако токът не е проблем</b> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a> / <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-klaro-easy">Klaro Easy</a> (SBR). При постоянно ползване работят стабилно и дават високо качество; компромисът е ел. захранване + повече поддръжка (компресор, утайка).</div>
+      <div class="step key"><b>Реши пътя на заустване — той определя избора.</b> Има ли близо <strong>дере/повърхностен обект</strong> (→ нужен EN 12566-3: One2Clean/EasyCompact/EcoRock), или ще е <strong>дренаж в почвата</strong> (→ стига и Anaerobix/септичен + дренажен тунел, при попивна почва)?</div>
+      <div class="step"><b>Провери правния статус</b> (чл. 46, ал. 4, т. 1 ЗВ). Ако обектът е извън населено място, ≤10 м³/ден, ≤50 ЕЖ с поне първично пречистване — разрешително вероятно <strong>не Ви трябва</strong>. Питай <a href="https://www.bd-dunav.bg/contact/">БДДР</a> (офис София).</div>
+      <div class="step"><b>Заустване в дере + токът не е проблем</b> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">One2Clean 5 ЕЖ</a> (за 4 постоянни обитатели; 3 ЕЖ е гранично). <span class="price">€3 200</span> без ДДС / <span class="price">€3 840</span> с ДДС + монтаж €280. Най-добро качество/цена — и препоръката на доставчика.</div>
+      <div class="step"><b>„Без ток" е твърдо изискване</b> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">EasyCompact 4 ЕЖ</a> — <span class="price">€4 420</span> / <span class="price">€5 304</span> с ДДС. Без компресор, EN 12566-3, дере ✔, 5 г. гаранция. Доплащаш ~€1 500 спрямо One2Clean за простота.</div>
+      <div class="step"><b>Дренаж в почва + бюджет</b> → <a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Anaerobix 3 ЕЖ</a> — <span class="price">€1 600</span> / <span class="price">€1 920</span> с ДДС + дренажен тунел. Само ~85%, без азот, <strong>не за дере</strong>.</div>
+      <div class="step"><b>Питай Петър за:</b> (а) актуализирани цени (офертата изтече на 05.06), (б) доставка до Осоица (извън София), (в) цена за комплексно изпълнение с изкопни работи, (г) протокол от изпитване за One2Clean, (д) оразмеряване при 4 постоянни обитатели.</div>
     </div>
   </section>
 
-  <!-- ============ sources ============ -->
   <section id="sources">
-    <h2><span class="num">07</span>Основни източници</h2>
-    <div class="panel src-list">
-      <div><a href="https://www.bd-dunav.bg/contact/">bd-dunav.bg</a> — БД „Дунавски район" (контакти)</div>
-      <div><a href="https://www.damtn.government.bg/wp-content/uploads/zakoni/zakon-za-vodite.pdf">Закон за водите</a> (пълен текст)</div>
-      <div><a href="https://www.moew.government.bg/bg/vodi/administrativni-uslugi/obrazci-na-zayavleniya-za-izdavane-na-razreshitelni/">МОСВ</a> — образци № 20/21/22</div>
-      <div><a href="https://www.bd-dunav.bg/uploads/content/files/naredbi/naredba%20N2_razreshitelni%20za%20zaustv_vo.pdf">Наредба № 2/2011</a></div>
-      <div><a href="https://www.ekatte.com/област-софия/община-горна-малина/осоица">ЕКАТТЕ</a> — с. Осоица (54287)</div>
-      <div><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-argo">Graf EasyCompact</a> (pi-trade.com)</div>
-      <div><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-one2clean">Graf One2Clean</a> (pi-trade.com)</div>
-      <div><a href="https://pi-trade.com/bg/product/prechistvatelni-stantsii-anaerobix">Graf Anaerobix</a> (pi-trade.com)</div>
-      <div><a href="https://4tanks.bg/bg-product-details-838.html">COMPACT BIO 4</a> (4tanks.bg)</div>
-      <div><a href="https://prestan.bg/пречиствателни-станции/">Pure Sys</a> (prestan.bg)</div>
-      <div><a href="https://biorock.bg/">BIOROCK / ECOROCK</a> (biorock.bg)</div>
-      <div><a href="https://www.premiertechaqua.com/en-gb/wastewater-treatment/ecoflo">Premier Tech Ecoflo</a></div>
-      <div><a href="https://en.wikipedia.org/wiki/EN_12566">EN 12566</a> — стандарти</div>
+    <h2><span class="num">07</span>Източници</h2>
+    <div class="panel">
+      <p style="margin-top:0"><strong style="color:var(--green-lt)">Получена оферта (основен източник):</strong> ПИ Трейд (Pi Trade), 06.2026 — One2Clean, EasyCompact, EcoRock, Anaerobix, септичен резервоар, дренажен тунел (всички GRAF; цени без ДДС). Контакт: Петър Цинцов · office@pi-trade.com · +359 888 80 70 17.</p>
+      <div class="src-list">
+        <div><a href="https://pi-trade.com/bg/">pi-trade.com</a> — продуктови страници GRAF</div>
+        <div><a href="https://www.bd-dunav.bg/contact/">bd-dunav.bg</a> — БД „Дунавски район"</div>
+        <div><a href="https://www.damtn.government.bg/wp-content/uploads/zakoni/zakon-za-vodite.pdf">Закон за водите</a> (пълен текст)</div>
+        <div><a href="https://www.moew.government.bg/bg/vodi/administrativni-uslugi/obrazci-na-zayavleniya-za-izdavane-na-razreshitelni/">МОСВ</a> — образци № 20/21/22</div>
+        <div><a href="https://www.bd-dunav.bg/uploads/content/files/naredbi/naredba%20N2_razreshitelni%20za%20zaustv_vo.pdf">Наредба № 2/2011</a></div>
+        <div><a href="https://www.ekatte.com/област-софия/община-горна-малина/осоица">ЕКАТТЕ</a> — с. Осоица (54287)</div>
+        <div><a href="https://en.wikipedia.org/wiki/EN_12566">EN 12566</a> — стандарти</div>
+        <div><a href="https://4tanks.bg/bg-product-details-838.html">4tanks.bg</a> · <a href="https://biorock.bg/">biorock.bg</a> · <a href="https://prestan.bg/">prestan.bg</a> — алтернативни доставчици</div>
+      </div>
     </div>
   </section>
 
   <footer>
     <div class="ml">
       <span><b>обхват:</b> 1–4 ЕЖ · постоянно жилище</span>
-      <span><b>община:</b> Горна Малина</span>
+      <span><b>оферта:</b> Pi Trade (изтекла 05.06.2026)</span>
+      <span><b>валута:</b> EUR (без ДДС, освен където е указано)</span>
       <span><b>дата:</b> 2026-06-16</span>
     </div>
-    <p style="margin-top:12px">;; Цени и нормативни препратки са към момента на проучването (2026 г.). Маркетинговите проценти на пречистване са твърдения на доставчиците — при заустване изисквайте независим протокол. Преди покупка вземете 2–3 оферти с монтаж и потвърдете режима с <a href="https://www.bd-dunav.bg/contact/">БДДР Плевен</a>.</p>
+    <p style="margin-top:12px">;; Цените са от офертата на Pi Trade (без ДДС, само оборудване). Маркетинговите проценти на пречистване са твърдения на доставчика — при заустване изисквайте независим протокол. Преди договор поискай актуализирана оферта и комплексно изпълнение, и потвърди режима с <a href="https://www.bd-dunav.bg/contact/">БДДР</a> (офис София).</p>
   </footer>
 
 </div>
