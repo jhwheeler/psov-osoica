@@ -111,7 +111,8 @@
   .legend{display:flex; gap:22px; flex-wrap:wrap; font-size:17px; margin:8px 0 0; color:var(--dim)}
 
   .steps{counter-reset:s; display:grid; gap:16px}
-  .step{position:relative; background:var(--bg2); border:1px solid var(--border); border-radius:7px; padding:18px 20px 18px 72px}
+  .steps{min-width:0}
+  .step{position:relative; min-width:0; overflow-wrap:anywhere; background:var(--bg2); border:1px solid var(--border); border-radius:7px; padding:18px 20px 18px 72px}
   .step::before{counter-increment:s; content:counter(s); position:absolute; left:18px; top:18px; width:38px; height:38px; border-radius:50%; background:var(--purple); color:#fff; display:flex; align-items:center; justify-content:center; font-weight:700; font-size:20px}
   .step.key{border-color:var(--green); box-shadow:0 0 0 1px rgba(45,149,116,.4)} .step.key::before{background:var(--green)}
   .step b{color:#fff}
